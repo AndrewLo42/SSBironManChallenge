@@ -1,0 +1,7 @@
+{
+  "characters": [{
+    "name": "Fox",
+    "image": "../dist/public/fox.png",
+    "id": 1
+  }]
+}

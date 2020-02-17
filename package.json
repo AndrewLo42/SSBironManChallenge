@@ -1,0 +1,99 @@
+{
+  "name": "ironmanapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev": "npm-run-all --silent --parallel dev:*",
+    "dev:client": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-react-jsx": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "eslint": "6.8.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-standard": "4.0.1",
+    "husky": "3.1.0",
+    "lint-staged": "9.5.0",
+    "npm-run-all": "4.1.5",
+    "webpack-dev-server": "3.9.0"
+  },
+  "eslintIgnore": [
+    "server/public/main.js"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "eslint:recommended",
+      "standard"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "padded-blocks": 0,
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "curly": [
+        "error",
+        "multi-line"
+      ],
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "react/prop-types": 0,
+      "react/react-in-jsx-scope": 0
+    }
+  }
+}
