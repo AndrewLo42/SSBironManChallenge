@@ -1,17 +1,24 @@
 const express = require("express");
+const app = express();
 const path = require("path");
 const characterFile = require('../database/data.json');
-var app = express();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+// var server = require('http').Server(app);
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
+const publicPath = path.join(__dirname, 'public/');
+const staticMiddlware = express.static(publicPath);
 const dbPath = path.join(__dirname, '../database/data.json');
-app.use(express.static('../database/data.json'));
-app.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static('../database/data.json'));
+server.use(express.static(path.join(__dirname, 'public')));
 
-server.listen(3000);
+server.use(staticMiddleware);
+server.use(sessionMiddleware);
 
-app.get('/', (req, res) => {
+
+
+server.get('/api/check', (req, res) => {
+  console.log('no')
   res.send("yes").status(200);
 });
 
@@ -24,11 +31,9 @@ app.get('/api/characters', (req, res, next) => {
 });
 
 io.on('connection', (socket) => {
-  socket.emit('news', {hello: 'world'});
-  socket.on('other event', function (data) {
-    console.log(data);
-  });
+
+  const { id } = socket.client;
+  console.log(`User connected: ${id}`);
 });
-// app.listen(3000, () => {
-//   console.log("I love you 3000");
-// });
+const PORT = 3000;
+server.listen(PORT, () => console.log(`Listen on *: ${PORT}`));

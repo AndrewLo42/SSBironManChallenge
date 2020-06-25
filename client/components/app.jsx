@@ -1,17 +1,22 @@
 import React from 'react';
-import {'Pool'} from './charPool';
-
+import {Switch, BrowserRouter, Route} from 'react-router-dom';
+import Home from './homePage';
+import MeleeIronman from './ironmanMelee';
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state({
-      characters: [];
-    });
-  }
 
   render(){
     return(
-      <Pool></Pool>
+      <div>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Home}  />
+            <Route path="/melee-ironman" component={MeleeIronman}/>
+          </Switch>
+        </BrowserRouter>
+      </div>
+
     );
   }
 }
+//<Route path="/" render={(props) => <Home {...props} />} />
+export default App;

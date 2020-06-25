@@ -2,3 +2,5 @@
 .DS_Store
 node_modules
 server/public/main.js*
+.env
+server/sessions/*.json
