@@ -54,6 +54,7 @@ body {
   width: 200px;
   text-align: center;
   margin-bottom: .5rem;
+  user-select: none;
 }
 .nav-link {
   height: 100%;
@@ -69,6 +70,25 @@ body {
   height: 100%;
   padding: 5%;
 
+}
+
+.transforming-button {
+  background-color: lime;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid white;
+  transition: .5s ease-in-out;
+  text-decoration: none;
+  color: black;
+  user-select: none;
+}
+.transforming-button:hover{
+  box-shadow: 0 0 0 1px transparent, 0 0 0 2px lime, 0 0 0 3px lime, 0 0 0 4.5px transparent, 0 0 0 5px lime;
+  border-radius: 100px;
+  background: none;
+  color: lime;
+  text-decoration: none;
+  border: 1px solid transparent;
 }
 
 .angle-button {

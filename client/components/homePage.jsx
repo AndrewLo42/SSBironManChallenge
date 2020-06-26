@@ -16,7 +16,19 @@ class Home extends React.Component {
   render() {
     return (
       <div className="mt-4 text-center">
-        <div className="">
+        <div className="d-flex sm-row justify-content-center container">
+          <section className="mr-4">
+            <h2>Melee Ironman</h2>
+            <div className="transforming-button">
+              <NavLink className="nav-link" to="/melee-ironman">Start Challenge</NavLink>
+            </div>
+          </section>
+          <section className="ml-4">
+            <h2>Ultimate Ironman</h2>
+          Coming Soon...
+          </section>
+        </div>
+        <div className="mt-4 container">
           <h1>What is an Ironman?</h1>
           <p>
             The idea behind an Ironman is to test each player's ability to play a variety of characters.
@@ -38,18 +50,12 @@ class Home extends React.Component {
         <p>
           With the release of Slippi 2.0 and matchmaking, online Melee ironmans are doable in similar fashion to Ultimate's ironman challenge and it's fun!
         </p>
-        <div className="row justify-content-center">
-          <section className="mr-4">
-            <h2>Melee Ironman</h2>
-            <button>
-              <NavLink to="/melee-ironman">Start Challenge</NavLink>
-            </button>
-          </section>
-          <section className="ml-4">
-            <h2>Ultimate Ironman</h2>
-          Coming Soon...
-          </section>
-        </div>
+        <h3>Where can I play Melee online?</h3>
+        <div className="mt-4">
+          <a target='blank' href="https://www.slippi.gg" className="transforming-button">
+            slippi.gg
+          </a>
+          </div>
 
 
       </div>

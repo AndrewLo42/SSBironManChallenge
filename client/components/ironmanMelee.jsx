@@ -52,7 +52,7 @@ class MeleeIronman extends React.Component {
 
   loadLineUp() {
     let showNext = <div></div>
-    if (this.state.currentChar < 24 ) {
+    if (this.state.currentChar < 25 ) {
        showNext = (<img className={`${showNext} ml-3`} src={this.state.lineup[this.state.currentChar + 1].image}></img>)
     } else {
       showNext = <div></div>
