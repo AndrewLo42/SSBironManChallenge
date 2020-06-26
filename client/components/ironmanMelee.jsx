@@ -71,7 +71,7 @@ class MeleeIronman extends React.Component {
           </div>
         </section>
 
-        <div className="row justify-content-between mt-5 game-options">
+        <div className="row justify-content-sm-between justify-content-center mt-sm-5 mt-3 game-options">
           <div className="angle-button nav-button">
             <NavLink className="nav-link" to='/'>Go Home</NavLink>
           </div>
@@ -110,9 +110,14 @@ class MeleeIronman extends React.Component {
     if(!this.state.loaded){
       return (
       <div>
-        Loading...
-
+        <div>
+          <h1>Gathering Fighters...</h1>
+          <div className="loading-icon-container">
+           <img className="pulse-load" src="./images/pulseicon.gif"></img>
+          </div>
         </div>
+
+      </div>
       )}
     return(
       <div className="container ironman-game">

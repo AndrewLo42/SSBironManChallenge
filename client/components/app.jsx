@@ -2,11 +2,13 @@ import React from 'react';
 import {Switch, BrowserRouter, Route} from 'react-router-dom';
 import Home from './homePage';
 import MeleeIronman from './ironmanMelee';
+import Header from './header';
 class App extends React.Component {
 
   render(){
     return(
       <div>
+        <Header/>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home}  />
