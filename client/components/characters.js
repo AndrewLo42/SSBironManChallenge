@@ -121,7 +121,7 @@ let characters = [
   },
   {
     "name": "Pikachu",
-    "image": "./images/gannon.png",
+    "image": "./images/pikachu.png",
     "css": "./images/pikachuCSS.png",
     "id": 21
   },
