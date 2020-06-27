@@ -1,3 +1,7 @@
+:root{
+  --main-purple: #b179bb;
+}
+
 body {
   background-color: #110f0f;
   color: #C6C6C6;
@@ -44,19 +48,20 @@ body {
 
 .menu-content {
   animation: slide-side .25s;
-  display: none;
+  transition: .25s all ease-in-out;
+  opacity: 0;
   position: absolute;
   background-color: #9341a1;
   min-width: 100px;
   box-shadow: 0px 2px 5px 0px #9341a1;
-
   right: 1px;
 }
 .dropdown-menu-head:hover {
   color: lime;
 }
 .dropdown-menu-head:hover .menu-content {
-  display: block;
+  animation: slide-side .25s;
+  opacity: 100;
 }
 
 
@@ -103,7 +108,7 @@ body {
   width: 3.5rem;
 }
 .current-character {
-  margin-top: 2rem;
+  margin-top: .5rem;
   font-size: 2rem;
 }
 .current-character img {
@@ -113,6 +118,23 @@ body {
   width: 6rem;
   height: 2rem;
   border-radius: 5px;
+}
+.options-row {
+  animation: fade-in .5s;
+}
+.options-row.faded {
+  opacity: 0;
+  animation: fade-out .5s;
+}
+.options-row button {
+  border-radius: 5px;
+  transition: .3s all ease-in-out;
+  background-color: var(--main-purple);
+  padding: .5rem;
+}
+.options-row button:hover {
+  background-color: limegreen;
+  color: black;
 }
 
 .runs-container {
@@ -170,7 +192,7 @@ body {
   background-color: lime;
   padding: 10px 30px;
   border-radius: 5px;
-  border: 1px solid white;
+  border: 1px solid lavender;
   transition: .5s ease-in-out;
   text-decoration: none;
   color: black;
@@ -186,15 +208,13 @@ body {
 }
 
 .angle-button {
-  color: #fff;
+  color: white;
   border: 3px solid #c266d3;
-  background-image: -webkit-linear-gradient(30deg, #b179bb 50%, transparent 50%);
   background-image: linear-gradient(30deg, #b179bb 50%, transparent 50%);
   background-size: 500px;
   background-repeat: no-repeat;
   background-position: 0%;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+  transition: all .3s ease-in-out;
 }
 .angle-button:hover {
   transform: scale(1.1);
@@ -209,6 +229,11 @@ body {
 @keyframes fade-in {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes slide-down {

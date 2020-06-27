@@ -17,6 +17,8 @@ class MeleeIronman extends React.Component {
     this.nextChar = this.nextChar.bind(this);
     this.randomize = this.randomize.bind(this);
     this.newGame = this.newGame.bind(this);
+    this.orderLineup = this.orderLineup.bind(this);
+    this.reverseOrderLineup = this.reverseOrderLineup.bind(this);
   }
 
   componentDidMount() {
@@ -71,7 +73,7 @@ class MeleeIronman extends React.Component {
           </div>
         </section>
 
-        <div className="row justify-content-sm-between justify-content-center mt-sm-5 mt-3 game-options">
+        <div className="row justify-content-sm-between justify-content-center mt-3 game-options">
           <div className="angle-button nav-button">
             <NavLink className="nav-link" to='/'>Go Home</NavLink>
           </div>
@@ -84,6 +86,33 @@ class MeleeIronman extends React.Component {
         </div>
       </div>
     )
+
+  }
+
+  orderLineup() {
+    let ordered = this.state.characters;
+    ordered.sort((a,b) => {
+      return a.id - b.id;
+    });
+    this.setState({lineup: ordered});
+  }
+  reverseOrderLineup() {
+    let ordered = this.state.characters;
+    ordered.sort((a, b) => {
+      return b.id - a.id;
+    });
+    this.setState({ lineup: ordered });
+  }
+
+  loadOptions() {
+    let hiddenClass = "faded"
+    if(this.state.currentChar === 0) {
+      hiddenClass = "show-options"
+    }
+      return(<div className={`${hiddenClass} options-row mt-2 row justify-content-center`}>
+        <button onClick={this.orderLineup}>Play in Order</button>
+        <button onClick={this.reverseOrderLineup}>Play in Reverse</button>
+      </div>)
 
   }
 
@@ -113,7 +142,7 @@ class MeleeIronman extends React.Component {
         <div>
           <h1>Gathering Fighters...</h1>
           <div className="loading-icon-container">
-           <img className="pulse-load" src="./images/pulseicon.gif"></img>
+           <img className="pulse-load" src="./images/smashbros.png"></img>
           </div>
         </div>
 
@@ -122,6 +151,7 @@ class MeleeIronman extends React.Component {
     return(
       <div className="container ironman-game">
         <CharacterSelects characters={this.state.shuffledRoster} />
+        {this.loadOptions()}
         {this.loadLineUp()}
         <div id="runs" className="runs-container">
           {this.loadPreviousRuns()}

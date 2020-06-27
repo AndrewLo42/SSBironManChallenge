@@ -5,7 +5,7 @@ function Header() {
     <div className="row justify-content-between header-item">
       <div className="pl-3">
         <a href="/">
-          <img src="./images/favicon.png" href="/" />
+          <img src="./images/super-smash-bros.png" href="/" />
         </a>
       </div>
       <div></div>
