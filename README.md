@@ -4,7 +4,7 @@ A fun app to assist doing ironman challenges.
 # Live Demo
 Link: http://ssb.andrewclo.com/
 
-#Screenshot 
+# Screenshot 
 Link: https://gyazo.com/3bf44c9a78326b0bff2fd4764d3cce79
 
 # Features
