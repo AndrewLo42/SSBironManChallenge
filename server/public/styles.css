@@ -123,6 +123,9 @@ body {
   opacity: 0;
   animation: fade-out .5s;
 }
+.options-row.faded button {
+  cursor: auto;
+}
 .options-row button {
   border-radius: 5px;
   transition: .3s all ease-in-out;
@@ -221,6 +224,11 @@ body {
 
 .angle-button:hover .nav-link {
   color: white;
+}
+
+.grayed {
+  filter: grayscale(.75) brightness(.75);
+
 }
 
 @keyframes fade-in {

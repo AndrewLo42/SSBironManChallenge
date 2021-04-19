@@ -48,7 +48,9 @@ class MeleeIronman extends React.Component {
     let updateRun = this.state.previousRuns;
     updateRun.push(run);
     this.setState({previousRuns: updateRun})
-
+    for(let i = 0; i < this.state.lineup.length; i++) {
+      document.getElementById(`${this.state.lineup[i].id}`).classList.remove("grayed");
+    }
     this.randomize();
   }
 
@@ -90,18 +92,22 @@ class MeleeIronman extends React.Component {
   }
 
   orderLineup() {
-    let ordered = this.state.characters;
-    ordered.sort((a,b) => {
-      return a.id - b.id;
-    });
-    this.setState({lineup: ordered});
+    if(this.state.currentChar === 0) {
+      let ordered = this.state.characters;
+      ordered.sort((a,b) => {
+        return a.id - b.id;
+      });
+      this.setState({lineup: ordered});
+    }
   }
   reverseOrderLineup() {
-    let ordered = this.state.characters;
-    ordered.sort((a, b) => {
-      return b.id - a.id;
-    });
-    this.setState({ lineup: ordered });
+    if(this.state.currentChar === 0) {
+      let ordered = this.state.characters;
+      ordered.sort((a, b) => {
+        return b.id - a.id;
+      });
+      this.setState({ lineup: ordered });
+    }
   }
 
   loadOptions() {
@@ -118,6 +124,7 @@ class MeleeIronman extends React.Component {
 
   nextChar() {
     if(this.state.currentChar < 25) {
+      document.getElementById(`${this.state.lineup[this.state.currentChar].id}`).classList.add("grayed")
       this.setState({ currentChar: this.state.currentChar + 1 })
     } else {
       this.newGame();

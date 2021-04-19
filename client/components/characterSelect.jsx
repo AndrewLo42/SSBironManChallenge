@@ -13,17 +13,17 @@ class CharacterSelects extends React.Component {
       if(i < 9) {
         rowOne.push(
         <div className={` ${character.name}`} key={character.id}>
-          <img src={character.css}></img>
+          <img src={character.css} id={character.id}></img>
         </div>);
       } else if (i < 18){
         rowTwo.push(
           <div className={` ${character.name}`} key={character.id}>
-            <img src={character.css}></img>
+            <img src={character.css} id={character.id}></img>
           </div>);
       } else {
         rowThree.push(
           <div className={` ${character.name}`} key={character.id}>
-            <img src={character.css}></img>
+            <img src={character.css} id={character.id}></img>
           </div>);
       }
     }
