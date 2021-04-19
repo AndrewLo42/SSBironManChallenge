@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom'
 function Header() {
   return(
     <div className="row justify-content-between header-item">
-      <div className="pl-3">
+      <div className="pl-3 mb-2">
         <a href="/">
-          <img src="./images/super-smash-bros.png" href="/" />
+          <img className="pb-3" src="./images/super-smash-bros.png" href="/" />
         </a>
       </div>
       <div></div>
