@@ -9,6 +9,7 @@ Link: https://gyazo.com/3bf44c9a78326b0bff2fd4764d3cce79
 
 # Features
 - User can start an ironman challenge
+- User can see their current character and their next character 
 - User can track previous attempts 
 
 # Future Features 
