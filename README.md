@@ -17,4 +17,9 @@ Link: https://gyazo.com/3bf44c9a78326b0bff2fd4764d3cce79
 - User can log-in
 - User can do head-to-head ironmans
 - User can find information about characters
+- User can see run history
 
+# Need to Update
+- Packages
+- Webpack config
+- Header
